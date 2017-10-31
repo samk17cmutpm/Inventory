@@ -4,6 +4,7 @@ package com.polahub.pos.inventory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +36,7 @@ public class InventoryContentFragment extends Fragment {
 
     private SpacesItemDecoration mSpacesItemDecoration;
 
-    private GridLayoutManager mGridLayoutManager;
+    private LinearLayoutManager mLinearLayoutManager;
 
     public InventoryContentFragment() {
         // Required empty public constructor
@@ -74,9 +75,9 @@ public class InventoryContentFragment extends Fragment {
 
         mSpacesItemDecoration = new SpacesItemDecoration(10);
         mInventoryAdapter = new InventoryAdapter(mInventoryItems);
-        mGridLayoutManager = new GridLayoutManager(getActivity(), 2);
+        mLinearLayoutManager = new LinearLayoutManager(getActivity());
 
-        mRecyclerView.setLayoutManager(mGridLayoutManager);
+        mRecyclerView.setLayoutManager(mLinearLayoutManager);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.addItemDecoration(mSpacesItemDecoration);
         mRecyclerView.setAdapter(mInventoryAdapter);
